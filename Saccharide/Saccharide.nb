@@ -1,0 +1,451 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     15434,        442]
+NotebookOptionsPosition[     13839,        382]
+NotebookOutlinePosition[     14183,        397]
+CellTagsIndexPosition[     14140,        394]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  "\"\<C:\\\\Users\\\\Juntao \
+Yu\\\\Desktop\\\\Saccharide\\\\Standard.xlsx\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.6363472103884954`*^9, 3.6363472217378845`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0.`", ",", "0.`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.004444444444444445`", ",", "0.121`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.00888888888888889`", ",", "0.345`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.013333333333333332`", ",", "0.572`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.01777777777777778`", ",", "0.817`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.022222222222222223`", ",", "1.032`"}], "}"}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.6363482933869166`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0.`", ",", "0.`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.004444444444444445`", ",", "0.121`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.00888888888888889`", ",", "0.345`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.013333333333333332`", ",", "0.572`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.01777777777777778`", ",", "0.817`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.022222222222222223`", ",", "1.032`"}], "}"}]}], 
+   "}"}]}]], "Input",
+ CellChangeTimes->{{3.6363472371736298`*^9, 3.6363472423179693`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.004444444444444445`", ",", "0.121`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.00888888888888889`", ",", "0.345`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.013333333333333332`", ",", "0.572`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.01777777777777778`", ",", "0.817`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.022222222222222223`", ",", "1.032`"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.636347242896117*^9, 3.6363482976070824`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gra", "=", 
+  RowBox[{"ListPlot", "[", 
+   RowBox[{"data", ",", 
+    RowBox[{"AxesLabel", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"\"\<Concentration, g/L\>\"", ",", "\"\<OD620nm\>\""}], 
+      "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.636347258141156*^9, 3.63634738007076*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, 
+   {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+    PointBox[{{0., 0.}, {0.004444444444444445, 0.121}, {0.00888888888888889, 
+     0.345}, {0.013333333333333332`, 0.572}, {0.01777777777777778, 0.817}, {
+     0.022222222222222223`, 1.032}}]}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"Concentration, g/L\"", TraditionalForm], 
+    FormBox["\"OD620nm\"", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  Method->{},
+  PlotRange->{{0, 0.022222222222222223`}, {0, 1.032}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0.00044444444444444447`, 0.00044444444444444447`}, {
+   0.020640000000000002`, 0.020640000000000002`}}]], "Output",
+ CellChangeTimes->{3.636347335205398*^9, 3.636347383682429*^9, 
+  3.6363483002647157`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"gra2", "=", 
+  RowBox[{"LinearModelFit", "[", 
+   RowBox[{"data", ",", "x", ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6363473861681376`*^9, 3.6363474204548836`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6363483065077667`*^9, 3.6363483078851323`*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.636347725522872*^9, 3.6363477256009893`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Normal", "[", "gra2", "]"}]], "Input",
+ CellChangeTimes->{{3.636347423440812*^9, 3.63634742647401*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "0.05276190476190524`"}], "+", 
+  RowBox[{"48.053571428571445`", " ", "x"}]}]], "Output",
+ CellChangeTimes->{3.636347427099033*^9, 3.63634830987053*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"gra", ",", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"gra2", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "0.25"}], "}"}]}], "]"}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", 
+    "\"\<Standard Plot of Glucose Concentration Dealt with Anthrone\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.636347429335367*^9, 3.636347461786624*^9}, {
+  3.6363475025361786`*^9, 3.636347530451317*^9}, {3.6363475746542044`*^9, 
+  3.636347611105197*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+     PointBox[{{0., 0.}, {0.004444444444444445, 0.121}, {0.00888888888888889, 
+      0.345}, {0.013333333333333332`, 0.572}, {0.01777777777777778, 0.817}, {
+      0.022222222222222223`, 1.032}}]}, {}}, {{}, {}, 
+    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJwVxXk4lAkcAGAySZRGlIYc4/oSszyOqFa/X00pYuXYtTGYFXKUqxS1NoSo
+xBOV1h0qNxlHzTBCih2+pEIxSrSsEXocm1qzu3+8z0v3DnHyXSUhIWH/n/+3
+9Z3obZk03yNtNxifLlXGpzBVQkdoSvBAlrVYpFnCN83LzK6l6YBnp/B4vdU9
+/uHu/gc5NDNosB6zHTxbyHf1WWq6TtsPL+KE9D0Dt/jDRpeYKTQXyLd5rVzm
+FgX5mxwSL9N8wDLkuK5GRTXEytQSybTTYNmaI00Jfgo/Hy2omp2Lh8ok6eQQ
+xSGQE8eyDqqngtzF5gG9inHQdfw00XYlA4wL3x7ZtX0azvbshMz52zDxbGbb
+eNFnUOYoCCUl86Aigu5kE7II9aNMAfn9HahO7uBPXV6G1sAc1aOiIgi6xvJi
+p6/Agp7VhoqT98Bepzfd0kASV30po6rqlgKljqHCNpfCHWJ2vXNlOZzRHOW8
+2roaBfFmPR3bq4BJSfXnLEujRtrUl5JP1VCTFbHHRHItTi2NCF8ZP4DB9Zxt
+K2OyWPQXt0v+Wi3kmxqaB8ytQ3m1ezNjYxxo7c12s5qXx6sBdX75OvVwpNik
+yyiQiotYNuZ/oQFSuKaRacEKeNqknbO5rRH0+WzjzF824khl+5Ve+iPIyC6N
+mvFXxK+BL7P0z3GBUR/qcD5ICQ32rlnx4/JAu8nbqJK1CQ/eoR+vUW6GyZyw
+fGPvzXhWzUvrPYsP606Uq7r9pIyGoh/l+u1bwOPMMe3GA1tQccOsTPtyC0S7
+WfB8bWhI4WdVaWc/hq8GFl6PdqtgkBl3cO3hVjjU75zuuU8Vy2y885sXW6Gt
+WeRssX8rLkypUD/ebIOc9Br1BjM1rHM+KJWxvx0O7Es/l7hTHS8cSsjjfGwH
+W2H+u2+GGkgfth0oTHgC4H5jsm+9Ju6yiM+gmXTAXo6/gWOqJrLUyS+SfR0w
+K+X0mS5Dx4WulNHQ2KeQ1NIZq3KFjpkUz9NOOs+APOV602+1FioK6+6san8G
+hge05+yitXB1dKzLzrBOCLsYreQu1kKJEs+q0Y1d4Ns4zeNFamP471UpG1u7
+AN1EDOtv2thkkCSjEPwHmKrojwdE66CCbbhhnLwAXj4/T3+/oINDjOd9UTwB
+eMyz9GIidbE6F3TGPLshQ96lOvyzLnpU7VBQW+mGD9bJMeIAPYxJKIgdKu0B
+msiOxpnSw4oJtSx5OxJWLulZ8HwITMpJYAt/IOHteGjxgB+BPk7TupWOJDxk
+chUX/AncyuNV27uSECF2mGWcJPByqnvHVW8SRGeiSvIiCPTfcXtONoqEN74C
+1YuJBGrFKx1ac5eEBma4hO19Alcsf13ff5+EGwW8YL9SAgenP7y4W0ZCuFh6
+OK6cwDTXWg/rGhIY3KyH3GoCxdudTiXwSCg2eRLOeEjgUG9qrlQfCen0LePU
+LgIbE5eO9b0iIeyCtzNDQGDGbi/9wgESHIbLH9v0EHi4+DvOPiEJsrf35sa9
+IPBRZHdn7CQJcdQg1/k3BN5kmKc6ikhgB9c9oQ4TGDaa7UKfIcFKIDZljBC4
+ze7ESMs8CX9fyqD6fSCQIvmyKG2JhNfjwt/ixgl8V7c7kL1MAoepP537J4G8
+wEIj439IuF5wyp07SeAtDbkFsZiEUHFTZ/8Ugf8CQDdEeg==
+      "]]}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"Concentration, g/L\"", TraditionalForm], 
+    FormBox["\"OD620nm\"", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  ImageSize->{615., Automatic},
+  Method->{},
+  PlotLabel->FormBox[
+   "\"Standard Plot of Glucose Concentration Dealt with Anthrone\"", 
+    TraditionalForm],
+  PlotRange->{{0, 0.022222222222222223`}, {0, 1.032}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0.00044444444444444447`, 0.00044444444444444447`}, {
+   0.020640000000000002`, 0.020640000000000002`}}]], "Output",
+ CellChangeTimes->{3.636347611948764*^9, 3.6363483131988254`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gra2", "[", "\"\<RSquared\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.636347630520149*^9, 3.636347641065199*^9}}],
+
+Cell[BoxData["0.9925250451752973`"], "Output",
+ CellChangeTimes->{3.6363476416065617`*^9, 3.636348315701812*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"y", "==", 
+    RowBox[{
+     RowBox[{"-", "0.05276190476190524`"}], "+", 
+     RowBox[{"48.053571428571445`", " ", "x"}]}]}], ",", "x"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6363476506545973`*^9, 3.6363476662690086`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"x", "\[Rule]", 
+    RowBox[{
+     RowBox[{"-", "0.020810107766629497`"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "0.05276190476190524`"}], "-", "y"}], ")"}]}]}], "}"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.6363476667052927`*^9, 3.636348317641528*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"a", "[", "b_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"-", "0.020810107766629497`"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "0.05276190476190524`"}], "-", "b"}], ")"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"a", "[", "0.408", "]"}]}], "Input",
+ CellChangeTimes->{{3.636347669846387*^9, 3.6363477015112133`*^9}}],
+
+Cell[BoxData["0.009588504892852723`"], "Output",
+ CellChangeTimes->{3.636347702779202*^9, 3.6363483227209015`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"a", "[", "0.807", "]"}]], "Input",
+ CellChangeTimes->{{3.636347704310525*^9, 3.6363477087529936`*^9}}],
+
+Cell[BoxData["0.017891737891737897`"], "Output",
+ CellChangeTimes->{3.636347709159224*^9, 3.6363483252691436`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data3", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0.0095885`", ",", "0.408`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"0.0178917`", ",", "0.807`"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.636348327113799*^9, 3.636348353482685*^9}, {
+  3.636348565753539*^9, 3.6363485709135256`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.0095885`", ",", "0.408`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.0178917`", ",", "0.807`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.636348571887176*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6363485377232285`*^9, 3.6363485804911966`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"gra", ",", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"gra2", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "0.25"}], "}"}]}], "]"}], ",", 
+   RowBox[{"ListPlot", "[", "data3", "]"}], ",", 
+   RowBox[{
+   "PlotLabel", "\[Rule]", 
+    "\"\<Standard Plot of Glucose Concentration Dealt with Anthrone\>\""}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.636348372314904*^9, 3.636348382516571*^9}, {
+  3.6363485111569643`*^9, 3.6363485149715047`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+     PointBox[{{0., 0.}, {0.004444444444444445, 0.121}, {0.00888888888888889, 
+      0.345}, {0.013333333333333332`, 0.572}, {0.01777777777777778, 0.817}, {
+      0.022222222222222223`, 1.032}}]}, {}}, {{}, {}, 
+    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJwVxXk4lAkcAGAySZRGlIYc4/oSszyOqFa/X00pYuXYtTGYFXKUqxS1NoSo
+xBOV1h0qNxlHzTBCih2+pEIxSrSsEXocm1qzu3+8z0v3DnHyXSUhIWH/n/+3
+9Z3obZk03yNtNxifLlXGpzBVQkdoSvBAlrVYpFnCN83LzK6l6YBnp/B4vdU9
+/uHu/gc5NDNosB6zHTxbyHf1WWq6TtsPL+KE9D0Dt/jDRpeYKTQXyLd5rVzm
+FgX5mxwSL9N8wDLkuK5GRTXEytQSybTTYNmaI00Jfgo/Hy2omp2Lh8ok6eQQ
+xSGQE8eyDqqngtzF5gG9inHQdfw00XYlA4wL3x7ZtX0azvbshMz52zDxbGbb
+eNFnUOYoCCUl86Aigu5kE7II9aNMAfn9HahO7uBPXV6G1sAc1aOiIgi6xvJi
+p6/Agp7VhoqT98Bepzfd0kASV30po6rqlgKljqHCNpfCHWJ2vXNlOZzRHOW8
+2roaBfFmPR3bq4BJSfXnLEujRtrUl5JP1VCTFbHHRHItTi2NCF8ZP4DB9Zxt
+K2OyWPQXt0v+Wi3kmxqaB8ytQ3m1ezNjYxxo7c12s5qXx6sBdX75OvVwpNik
+yyiQiotYNuZ/oQFSuKaRacEKeNqknbO5rRH0+WzjzF824khl+5Ve+iPIyC6N
+mvFXxK+BL7P0z3GBUR/qcD5ICQ32rlnx4/JAu8nbqJK1CQ/eoR+vUW6GyZyw
+fGPvzXhWzUvrPYsP606Uq7r9pIyGoh/l+u1bwOPMMe3GA1tQccOsTPtyC0S7
+WfB8bWhI4WdVaWc/hq8GFl6PdqtgkBl3cO3hVjjU75zuuU8Vy2y885sXW6Gt
+WeRssX8rLkypUD/ebIOc9Br1BjM1rHM+KJWxvx0O7Es/l7hTHS8cSsjjfGwH
+W2H+u2+GGkgfth0oTHgC4H5jsm+9Ju6yiM+gmXTAXo6/gWOqJrLUyS+SfR0w
+K+X0mS5Dx4WulNHQ2KeQ1NIZq3KFjpkUz9NOOs+APOV602+1FioK6+6san8G
+hge05+yitXB1dKzLzrBOCLsYreQu1kKJEs+q0Y1d4Ns4zeNFamP471UpG1u7
+AN1EDOtv2thkkCSjEPwHmKrojwdE66CCbbhhnLwAXj4/T3+/oINDjOd9UTwB
+eMyz9GIidbE6F3TGPLshQ96lOvyzLnpU7VBQW+mGD9bJMeIAPYxJKIgdKu0B
+msiOxpnSw4oJtSx5OxJWLulZ8HwITMpJYAt/IOHteGjxgB+BPk7TupWOJDxk
+chUX/AncyuNV27uSECF2mGWcJPByqnvHVW8SRGeiSvIiCPTfcXtONoqEN74C
+1YuJBGrFKx1ac5eEBma4hO19Alcsf13ff5+EGwW8YL9SAgenP7y4W0ZCuFh6
+OK6cwDTXWg/rGhIY3KyH3GoCxdudTiXwSCg2eRLOeEjgUG9qrlQfCen0LePU
+LgIbE5eO9b0iIeyCtzNDQGDGbi/9wgESHIbLH9v0EHi4+DvOPiEJsrf35sa9
+IPBRZHdn7CQJcdQg1/k3BN5kmKc6ikhgB9c9oQ4TGDaa7UKfIcFKIDZljBC4
+ze7ESMs8CX9fyqD6fSCQIvmyKG2JhNfjwt/ixgl8V7c7kL1MAoepP537J4G8
+wEIj439IuF5wyp07SeAtDbkFsZiEUHFTZ/8Ugf8CQDdEeg==
+      "]]}}, {{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+     PointBox[{{0.0095885, 0.408}, {0.0178917, 0.807}}]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"Concentration, g/L\"", TraditionalForm], 
+    FormBox["\"OD620nm\"", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  ImageSize->{568., Automatic},
+  Method->{},
+  PlotLabel->FormBox[
+   "\"Standard Plot of Glucose Concentration Dealt with Anthrone\"", 
+    TraditionalForm],
+  PlotRange->{{0, 0.022222222222222223`}, {0, 1.032}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0.00044444444444444447`, 0.00044444444444444447`}, {
+   0.020640000000000002`, 0.020640000000000002`}}]], "Output",
+ CellChangeTimes->{3.6363485175027504`*^9, 3.636348575651692*^9}]
+}, Open  ]]
+},
+WindowSize->{1584, 763},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[579, 22, 207, 4, 31, "Input"],
+Cell[789, 28, 617, 17, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1443, 50, 646, 17, 31, "Input"],
+Cell[2092, 69, 603, 16, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2732, 90, 316, 8, 31, "Input"],
+Cell[3051, 100, 819, 18, 206, "Output"]
+}, Open  ]],
+Cell[3885, 121, 200, 4, 31, "Input"],
+Cell[4088, 127, 96, 1, 31, InheritFromParent],
+Cell[4187, 130, 94, 1, 31, "Input"],
+Cell[CellGroupData[{
+Cell[4306, 135, 127, 2, 31, "Input"],
+Cell[4436, 139, 191, 4, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4664, 148, 532, 14, 31, "Input"],
+Cell[5199, 164, 2718, 51, 379, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7954, 220, 138, 2, 31, "Input"],
+Cell[8095, 224, 112, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8244, 230, 288, 8, 31, "Input"],
+Cell[8535, 240, 333, 10, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8905, 255, 385, 11, 52, "Input"],
+Cell[9293, 268, 114, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9444, 274, 126, 2, 31, "Input"],
+Cell[9573, 278, 114, 1, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9724, 284, 347, 9, 31, "Input"],
+Cell[10074, 295, 241, 7, 31, "Output"]
+}, Open  ]],
+Cell[10330, 305, 96, 1, 31, InheritFromParent],
+Cell[CellGroupData[{
+Cell[10451, 310, 533, 14, 31, "Input"],
+Cell[10987, 326, 2836, 53, 350, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,227 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[      7396,        218]
+NotebookOptionsPosition[      6638,        187]
+NotebookOutlinePosition[      6982,        202]
+CellTagsIndexPosition[      6939,        199]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  "\"\<C:\\\\Users\\\\Juntao Yu\\\\Desktop\\\\\:86cb\:767d\:8d28\:6d53\:5ea6\
+\:6d4b\:91cf\\\\Lowry.xlsx\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.635760795262891*^9, 3.6357607976067734`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"data3", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0.`", ",", "0.`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"20.`", ",", "0.047`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"40.`", ",", "0.096`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"80.`", ",", "0.177`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"120.`", ",", "0.25`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"160.`", ",", "0.319`"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"200.`", ",", "0.3775`"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.635760802672076*^9, 3.6357608094076414`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"20.`", ",", "0.047`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"40.`", ",", "0.096`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"80.`", ",", "0.177`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"120.`", ",", "0.25`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"160.`", ",", "0.319`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"200.`", ",", "0.3775`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.635760811986637*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"lm3", "=", 
+  RowBox[{"LinearModelFit", "[", 
+   RowBox[{"data3", ",", "x", ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6357608173902545`*^9, 3.6357608444789*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"FittedModel", "[", 
+   TagBox[
+    PanelBox[
+     TagBox[
+      RowBox[{"0.013485494880546066`", "\[VeryThinSpace]", "+", 
+       RowBox[{"0.001890486348122867`", " ", "x"}]}],
+      Short],
+     FrameMargins->5],
+    Editable -> False], "]"}],
+  InterpretTemplate[
+  FittedModel[{
+    "Linear", {0.013485494880546066`, 
+     0.001890486348122867}, {{$CellContext`x}, {1, $CellContext`x}}, {0, 
+     0}}, {{1., 1., 1., 1., 1., 1., 1.}}, {{0., 0.}, {20., 0.047}, {40., 
+    0.096}, {80., 0.177}, {120., 0.25}, {160., 0.319}, {200., 0.3775}}, {{1., 
+    0.}, {1., 20.}, {1., 40.}, {1., 80.}, {1., 120.}, {1., 160.}, {1., 200.}}, 
+    Function[Null, 
+     Internal`LocalizedBlock[{$CellContext`x}, #], {HoldAll}]]& ],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->True]], "Output",
+ CellChangeTimes->{3.635760844853915*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Normal", "[", "lm3", "]"}]], "Input",
+ CellChangeTimes->{{3.635760846276256*^9, 3.635760851089431*^9}}],
+
+Cell[BoxData[
+ RowBox[{"0.013485494880546066`", "\[VeryThinSpace]", "+", 
+  RowBox[{"0.001890486348122867`", " ", "x"}]}]], "Output",
+ CellChangeTimes->{3.6357608514488173`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", "data3", "]"}], ",", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"lm3", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "200"}], "}"}]}], "]"}], ",", 
+   RowBox[{"AxesLabel", "\[Rule]", " ", 
+    RowBox[{"{", 
+     RowBox[{"\"\<protein mass(ug)\>\"", ",", "\"\<OD640\>\""}], "}"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.6357608537305136`*^9, 3.635760905379712*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, 
+    {RGBColor[0.24720000000000014`, 0.24, 0.6], 
+     PointBox[{{0., 0.}, {20., 0.047}, {40., 0.096}, {80., 0.177}, {120., 
+      0.25}, {160., 0.319}, {200., 0.3775}}]}, {}}, {{}, {}, 
+    {Hue[0.67, 0.6, 0.6], LineBox[CompressedData["
+1:eJwVxXk41HkcAOBhqyk1j07XI6LWVS3KVoTPp7akg4bYHLEax3yRcpYkYTLY
+mUI2lFjSIGowFlmLqNzCkH6DHnQwPSWlInLs7h/v82qwzth6ytJoNKv//L9m
+wlxOplqXuV7P7OWDmTyoWKqr7keKwKmZk76unwd1ocI7OqQW4mvkRMOKfGgw
+CGAvIR0gzVcaPJ/Ehya+2PIrexByLxoZF1y+As0mnMr37HHQ1D41JuebAC1J
+/QFS9gIwqsf0RtKT4FA13XqELY+LV7ok55Hr0M7YsWyRywYUxpyp6hBkwN6E
+/Q/zjurg+3/UnW4U3gZP/RmGIcMAz/40szDtnwtWup6fFA4Y4UDsaZutcQUg
+6rkY0rxrF0Zn7Vke4SiE3av1ihZdMsVo5vEHTPMSYH+/liFwQIxY0bhgbFEK
+ZxpGtxdZ7UUVHa/vhpvL4HenJT/OndqHgp3iI2uMK8C98YKXIbHAzlw/2x82
+VUIdXdnG19ESy23q3x9aXAWGqyJT3gYfwviPrwYuyFeD22ezLdanjuD8B6Oo
+qskayM58ojp1xRqL/e+aBXIeQulVk36xLRNr6OtiRNw6CP7bjJlxxAbTrdO0
+wkLrobZFMBHvbIsB8rJB5RGPwPuAcbW3wzFUiOQohwU9hlv5hmW+PnZY6vPO
+RxT+BJI+V0f5n7PHLZ+LuApRDTBSEHKWBP6KZzfzZ2WCG+GxxbW06OjjWPHC
+ej3rQhPIHO17mRDpgE2gm3YwoBloe8plss47Yhm4vTjBaoE4xSkrcawT3qy8
+2P6a3Qr+Tu71UxxnZL4SKX5xboPhKCMPuH4C57hPV4R6tMPa5Bt98dkuyG2y
+aNMmTyF3pd75xnRXHKrsfePq1AF1ger7tQt/w7RrWvYxBp2QuSFL1czODXWy
+/F6rFXZCdfgMjXS6Yf7sSwfrjV2gcZg+u/H4SdyU0qr5QNAFf3Xo8iQ9JzGW
+/vCGp7oY+A3zBhtcWDhSpu1llSOG5KC3Pm4DLNximj4YqtYN4evU5DUd3ZG1
+yszcJLUb7uoubgkecsfkjbYTP6v0wJIvMsp1rh54jxF0LOSPHsgzKInIHPXA
+OiO63LjSM9BlFVjP+Xnio4JmwfzNZ9B/sFJk/84Thd9SP9is7QVxTthWCPLC
+FI6EP5jaC99KbUw1J7zQY0SLKl79HBYeBJZxT7NRI+32UiXeczhsYLE//Csb
++7hJVysZFDS66Hv7BhEMt+LXZcZSsNqdVGWEEDTctmh5bTwFriSb0XmO4KhC
+uN0gj4LJwDUio3CCx4Z8R9UTKdgUNzUzd5mgXtBhRnYaBZGiWn5iCsHeNDnH
+nLsUmNCZxWWVBLe9jvuY10oBd0W8rLSKoLSJZtLUTkHXqno7lRqCGfdDOdIO
+Coiq0XREPcGl54iCbg8FqYZKey1bCQ4tszQtGKDgi/NQd98Awav69Lh7YxTg
+SWUtxiDBfWsvdbWNU8Dzsg2FYYLT3yZVxj5RoBnwWPXOG4Ie9SP3t05SYMPN
+9/T7QHC3fUO3cJ6CW7zhij8/EvxkbL6+gyYBaaKKnHiCYJ5aude4rAQi0/nC
+HVME10gF0/p0CbRlPaF5TxNsblv/C3OZBBRz523TvxOMKLnO918uAVbhTkH7
+HMHtKYzeRIYEhMX+UwsLBN+GxaiXyEvgX/zTTPU=
+      "]]}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->True,
+  AxesLabel->{
+    FormBox["\"protein mass(ug)\"", TraditionalForm], 
+    FormBox["\"OD640\"", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  ImageSize->{672., Automatic},
+  Method->{},
+  PlotRange->{{0, 200.}, {0, 0.3775}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{4., 4.}, {0.00755, 0.00755}}]], "Output",
+ CellChangeTimes->{3.635760906942757*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"lm3", "[", "\"\<RSquared\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.635760909896265*^9, 3.635760920038851*^9}}],
+
+Cell[BoxData["0.9941904455220504`"], "Output",
+ CellChangeTimes->{3.6357609209607534`*^9}]
+}, Open  ]]
+},
+WindowSize->{1584, 763},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Microsoft Windows (64-bit) (November 20, 2012)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 234, 4, 33, "Input"],
+Cell[794, 26, 630, 18, 31, "Input"],
+Cell[1427, 46, 563, 17, 31, "Output"],
+Cell[CellGroupData[{
+Cell[2015, 67, 196, 4, 31, "Input"],
+Cell[2214, 73, 869, 23, 52, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3120, 101, 127, 2, 31, "Input"],
+Cell[3250, 105, 177, 3, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3464, 113, 485, 13, 31, "Input"],
+Cell[3952, 128, 2403, 46, 404, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6392, 179, 137, 2, 31, "Input"],
+Cell[6532, 183, 90, 1, 31, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
